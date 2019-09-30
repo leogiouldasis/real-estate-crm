@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: crm_nginx
+    volumes:
+      - .:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
+    ports:
+      - "8200:80"
+
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: crm_php
+    volumes:
+      - .:/var/www:delegated
