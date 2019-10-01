@@ -13,6 +13,8 @@
         "jenssegers/mongodb": "^3.4",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "laravelcollective/html": "5.7",
+        "pimlie/laravel-datatables-mongodb": "^1.1",
         "yajra/laravel-datatables-oracle": "~8.0"
     },
     "require-dev": {

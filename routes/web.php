@@ -18,3 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/xe-ads', 'XeAdsController@index')->name('xe-ads');
+
+/**
+ * Async Routing
+ */
+Route::group([
+    'namespace' => 'Async',
+    'prefix' => 'async/',
+    'as' => 'async.',
+], function () {
+
+    Route::get('/xe-ads/getdata', 'XeAdsController@getColumnData')->name('shop.getdata');
+});

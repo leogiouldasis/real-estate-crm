@@ -39,6 +39,10 @@ return [
      * This is where you can register your custom dataTables builder.
      */
     'engines' => [
+        'moloquent'      => Pimlie\DataTables\MongodbDataTable::class,
+        'mongodb-query'  => Pimlie\DataTables\MongodbQueryDataTable::class,
+        'mongodb-hybrid' => Pimlie\DataTables\HybridMongodbQueryDataTable::class,
+        
         'eloquent'                    => \Yajra\DataTables\EloquentDataTable::class,
         'query'                       => \Yajra\DataTables\QueryDataTable::class,
         'collection'                  => \Yajra\DataTables\CollectionDataTable::class,
