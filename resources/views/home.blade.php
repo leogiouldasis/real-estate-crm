@@ -1,28 +1,57 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+Dashboard
+@stop
 
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                    </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+        $("#areas").select2({
+            placeholder: "Select an Area",
+            theme: "bootstrap"
+        });
 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+     
+      var table = $('#index').DataTable({
+        processing: true,
+        serverSide: true,
+        pageLength: 50,
+        lengthMenu: [ [10, 25, 50, 100, 200, 500, -1], [10, 25, 50, 100, 200, 500, "All"] ],
+        autoWidth: false,
+        filter: false,
+        dom: '<"top"i>rt<"bottom"flpB><"clear">',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            {
+              extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: ['0','1','2','3','4','5','6']
+                }
+            }
+        ],
+        ajax: {
+            "url": '/async/xe-ads/getdata',
+            "data": function ( d ) {
+                d.id_title = "test";
+            }
+        },
+        order: [[ 0, 'desc' ]],
+        searchHighlight: true,
+        responsive: true,
+        columns: [
+            {data: 'id', name: 'ads.id',  sortable: true},
+            {data: 'area_full', name: 'ads.area_full', sortable: true},
+            {data: 'price', name: 'ads.price', orderable: true},
+            {data: 'tm', name: 'ads.tm', orderable: true},
+            {data: 'is_professional', name: 'ads.is_professional',  sortable: true},
+            {data: 'xe_date', name: 'ads.xe_date',  sortable: true},
+            {data: 'updated_at', name: 'ads.updated_at',  sortable: true},
+            {data: 'created_at', name: 'ads.created_at',  sortable: true},
+            {data: 'href', name: 'ads.href',  sortable: true},
+          ]
+      });
+    });
+</script>

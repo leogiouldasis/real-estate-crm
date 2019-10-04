@@ -21,7 +21,7 @@ class XeAdsController extends Controller
 
     public function getColumnData(Request $request)
     {
-        $ads = XeAds::query();
+        $ads = XeAds::orderBy('xe_date', 'desc');
 
         return Datatables::of($ads)
             // ->addColumn('last_action_date', function ($lead) {

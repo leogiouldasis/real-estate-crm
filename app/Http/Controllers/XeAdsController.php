@@ -6,41 +6,25 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use View;
 use App\Models\XeAds;
+use Cache;
 
 class XeAdsController extends Controller
 {
     public function buildFilters()
     {
-        // $filters = [
-        //     'areas' => [],
-        //     'cities' => [],
-        //     'promo_areas' => [],
-        //     'states' => [],
-        // ];
+        $filters = [
+            'areas' => [],
+            'nomoi' => [],
+            'states' => [],
+        ];
 
-        // $selected = ['promoted_area_name', 'city', 'area'];
-        // $leads = Shop::where('is_archived', false)
-        //     ->where('is_ncr_eligible', true)
-        //     ->get($selected);
 
-        // foreach ($leads as $key => $value) {
-        //     if (isset($value->area) && !empty($value->area)) {
-        //         array_push($filters['areas'], $value->area);
-        //     }
-        //     if (isset($value->city) && !empty($value->city)) {
-        //         array_push($filters['cities'], $value->city);
-        //     }
-        //     if (isset($value->promoted_area_name) && !empty($value->promoted_area_name)) {
-        //         array_push($filters['promo_areas'], $value->promoted_area_name);
-        //     }
-        // }
+        $filters['areas'] = XeAds::raw()->distinct('area');
+        $filters['nomoi'] = XeAds::raw()->distinct('nomos');
+        $filters['states'] = XeAds::raw()->distinct('state');
 
-        // $filters['areas'] = array_unique($filters['areas']);
-        // $filters['cities'] = array_unique($filters['cities']);
-        // $filters['promo_areas'] = array_unique($filters['promo_areas']);
-
-        // View::share('filters', $filters);
-        // Cache::forever('filtered_areas', $filters['areas']);
+        View::share('filters', $filters);
+        Cache::forever('filtered_areas', $filters['areas']);
     }
 
     public function index(Request $request, $category = null, $sub_category = null)

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -10,10 +10,24 @@
                     <h2>{{ $title }}</h2>
                 </div>
                 <div class="card-body card-padding">
-                    {!! Form::open(['url' => '/xe-ads', 'method' => 'get', 'class' =>
-                    'form-horizontal',
-                    'id' => 'search-form']) !!}
-
+                    {!! Form::open(['url' => '/xe-ads', 'method' => 'get', 'class' => '', 'id' => '']) !!}
+                    <div class="row">
+                        <!-- Actions -->
+                        <div class="col-sm-4">
+                            <label for="areas" class="col-sm-4 control-label">Areas</label>
+                            <div class="col-sm-8">
+                                <select class="" name="action[]" data-placeholder="Choose areas..." id="areas"
+                                    multiple="multiple" style="width: 100%;">
+                                    <option value="" disabled="">ALL</option>
+                                    @foreach($filters['areas'] as $obj)
+                                    <option value="{{$obj}}">
+                                        {{$obj}}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     {!! Form::close() !!}
                 </div>
                 <div class="card-body card-padding">
@@ -41,9 +55,14 @@
 </div>
 @stop
 
-<script src="{{ mix('js/app.js') }}"></script>
+@push('scripts')
 <script type="text/javascript">
     $(document).ready(function() {
+        
+        $("#areas").select2({
+            placeholder: "Select an Area",
+            theme: "bootstrap"
+        });
 
      
       var table = $('#index').DataTable({
@@ -88,3 +107,4 @@
       });
     });
 </script>
+@endpush
