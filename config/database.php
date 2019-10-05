@@ -39,7 +39,7 @@ return [
             'dsn' => env('MONGO_DSN'),
             'database' => env('DB_DATABASE', ''),
             'options' => [
-                'authSource' => 'admin',
+                'database' => 'admin' // sets the authentication database required by mongo 3
             ]
         ],
 
