@@ -17,15 +17,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/xe-ads/visited', 'XeAdsController@visited')->name('home');
-Route::resource('xe-ads', 'XeAdsController');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/xe-ads/visited', 'XeAdsController@visited')->name('home');
+    Route::resource('xe-ads', 'XeAdsController');
+});
+
 
 
 /**
  * Async Routing
  */
 Route::group([
+    'middleware' => ['auth'],
     'namespace' => 'Async',
     'prefix' => 'async/',
     'as' => 'async.',
