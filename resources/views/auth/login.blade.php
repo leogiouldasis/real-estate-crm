@@ -72,7 +72,7 @@
                             <div class="clearfix"></div>
                             <br />
                             <div>
-                                <h1><i class="fa fa-paw"></i> RECRM</h1>
+                                <h1><i class="fa fa-home"></i> RECRM</h1>
                             </div>
                         </div>
                     </form>

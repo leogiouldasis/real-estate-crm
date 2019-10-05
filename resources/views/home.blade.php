@@ -4,6 +4,7 @@
 Dashboard
 @stop
 
+@push('scripts')
 <script type="text/javascript">
     $(document).ready(function() {
         
@@ -55,3 +56,4 @@ Dashboard
       });
     });
 </script>
+@endpush
