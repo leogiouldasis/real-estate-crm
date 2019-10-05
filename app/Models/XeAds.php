@@ -31,6 +31,7 @@ class XeAds extends Eloquent
     protected $dates = [
         'xe_date',
     ];
+    protected $dateFormat = 'd-m-Y H:i';
 
     /**
      * The attributes that are mass assignable.
@@ -52,9 +53,20 @@ class XeAds extends Eloquent
         'is_professional',
         'professional_link',
         'description',
-        'xe_date'
+        'xe_date',
+
+        'notes',
+        'last_action_by',
     ];
 
     protected $primaryKey = '_id';
+
+
+    // Relations
+    public function last_action_user()
+    {
+        return $this->hasOne('App\User', '_id', 'last_action_by');
+    }
+
 
 }

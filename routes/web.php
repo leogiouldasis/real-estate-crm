@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/xe-ads', 'XeAdsController@index')->name('xe-ads');
+Route::get('/xe-ads/visited', 'XeAdsController@visited')->name('home');
+Route::resource('xe-ads', 'XeAdsController');
+
 
 /**
  * Async Routing
@@ -30,4 +32,5 @@ Route::group([
 ], function () {
 
     Route::get('/xe-ads/getdata', 'XeAdsController@getColumnData')->name('shop.getdata');
+    Route::get('/xe-ads/visited/getdata', 'XeAdsController@getVisitedColumnData')->name('shop.visited.getdata');
 });

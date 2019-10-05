@@ -30,8 +30,17 @@ class XeAdsController extends Controller
     public function index(Request $request, $category = null, $sub_category = null)
     {
         $this->buildFilters();
-        return view('xe-ads', [
+        return view('xe-ads.index', [
             'title' => 'Xe Ads List',
+            'request' => $request->all(),
+        ]);
+    }
+
+    public function visited(Request $request, $category = null, $sub_category = null)
+    {
+        $this->buildFilters();
+        return view('xe-ads.visited', [
+            'title' => 'Xe Ads Visited List',
             'request' => $request->all(),
         ]);
     }
@@ -76,7 +85,13 @@ class XeAdsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $xeAd = XeAds::where('id', (int) $id)->first();
+        // dd($xeAd);
+
+        return view('xe-ads.edit', [
+            'title' => 'Xe Ad '.$xeAd->id,
+            'xeAd' => $xeAd
+        ]);
     }
 
     /**
@@ -88,7 +103,11 @@ class XeAdsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['last_action_by'] = \Auth::user()->id;
+        $xeAd = XeAds::where('id', (int) $id)->first();
+        $xeAd->update($data);
+        return redirect()->route('xe-ads.edit', ['id' => $xeAd->id])->with('status', 'Saved!');
     }
 
     /**

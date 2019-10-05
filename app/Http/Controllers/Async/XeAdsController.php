@@ -23,6 +23,22 @@ class XeAdsController extends Controller
     {
         $ads = XeAds::orderBy('xe_date', 'desc');
 
+        if ($request->filled('areas')) {
+            $ads->whereIn('area', $request->areas);
+        }
+
+        if ($request->filled('nomoi')) {
+            $ads->whereIn('nomos', $request->nomoi);
+        }
+
+        if ($request->filled('states')) {
+            $ads->whereIn('state', $request->states);
+        }
+
+        if ($request->filled('is_professional')) {
+            $ads->where('is_professional', $request->is_professional);
+        }
+
         return Datatables::of($ads)
             // ->addColumn('last_action_date', function ($lead) {
             //     return $lead->last_action_date;
@@ -35,4 +51,35 @@ class XeAdsController extends Controller
             // })
             ->make(true);
     }
+
+    public function getVisitedColumnData(Request $request)
+    {
+        $ads = XeAds::orderBy('xe_date', 'desc')->whereNotNull('notes');
+
+        if ($request->filled('areas')) {
+            $ads->whereIn('area', $request->areas);
+        }
+
+        if ($request->filled('nomoi')) {
+            $ads->whereIn('nomos', $request->nomoi);
+        }
+
+        if ($request->filled('states')) {
+            $ads->whereIn('state', $request->states);
+        }
+
+        return Datatables::of($ads)
+            // ->addColumn('last_action_date', function ($lead) {
+            //     return $lead->last_action_date;
+            // })
+            // ->editColumn('am_appointment_date', function ($lead) {
+            //     return $lead->am_appointment_date != null ? Carbon::parse($lead->am_appointment_date)->format('d-m-Y') : '-';
+            // })
+            // ->editColumn('gmv_group', function ($lead) {
+            //     return $lead->{config('brand_config.brand')}['gmv_group'];
+            // })
+            ->make(true);
+    }
+
+    
 }
