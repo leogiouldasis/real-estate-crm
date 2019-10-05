@@ -38,7 +38,9 @@ return [
             'driver' => 'mongodb',
             'dsn' => env('MONGO_DSN'),
             'database' => env('DB_DATABASE', ''),
-            'options' => [],
+            'options' => [
+                'authSource' => 'admin',
+            ]
         ],
 
         'sqlite' => [
