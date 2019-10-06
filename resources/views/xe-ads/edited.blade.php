@@ -160,7 +160,7 @@
             }
         ],
         ajax: {
-            "url": '/async/xe-ads/visited/getdata',
+            "url": '/async/xe-ads/edited/getdata',
             "data": function ( d ) {
                 d.areas = areas;
                 d.nomoi = nomoi;

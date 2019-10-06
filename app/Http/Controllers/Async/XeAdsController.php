@@ -52,9 +52,9 @@ class XeAdsController extends Controller
             ->make(true);
     }
 
-    public function getVisitedColumnData(Request $request)
+    public function getEditedColumnData(Request $request)
     {
-        $ads = XeAds::orderBy('xe_date', 'desc')->whereNotNull('notes');
+        $ads = XeAds::orderBy('xe_date', 'desc')->where('edited', true);
 
         if ($request->filled('areas')) {
             $ads->whereIn('area', $request->areas);

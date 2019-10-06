@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/xe-ads/visited', 'XeAdsController@visited')->name('home');
+    Route::get('/xe-ads/edited', 'XeAdsController@edited')->name('home');
     Route::resource('xe-ads', 'XeAdsController');
 });
 
@@ -36,5 +36,5 @@ Route::group([
 ], function () {
 
     Route::get('/xe-ads/getdata', 'XeAdsController@getColumnData')->name('shop.getdata');
-    Route::get('/xe-ads/visited/getdata', 'XeAdsController@getVisitedColumnData')->name('shop.visited.getdata');
+    Route::get('/xe-ads/edited/getdata', 'XeAdsController@getEditedColumnData')->name('shop.visited.getdata');
 });

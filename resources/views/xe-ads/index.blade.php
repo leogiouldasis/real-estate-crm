@@ -107,6 +107,7 @@
                                                 <th>Type</th>
                                                 <th>Price</th>
                                                 <th>TM</th>
+                                                <th>Is Edited</th>
                                                 <th>Profe.</th>
                                                 <th>XE Date</th>
                                                 <th>Last updated</th>
@@ -199,6 +200,14 @@
             {data: 'type', name: 'ads.type', sortable: true},
             {data: 'price', name: 'ads.price', orderable: true},
             {data: 'tm', name: 'ads.tm', orderable: true},
+            {
+                sortable: false,
+                searchable: false,
+                "render": function ( data, type, full, meta ) {
+                    $item = full.edited ? '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>' : '';
+                    return $item;
+                }
+            },
             {data: 'is_professional', name: 'ads.is_professional',  sortable: true},
             {data: 'xe_date', name: 'ads.xe_date',  sortable: true},
             {data: 'updated_at', name: 'ads.updated_at',  sortable: true},

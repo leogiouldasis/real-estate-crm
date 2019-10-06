@@ -54,9 +54,10 @@ class XeAds extends Eloquent
         'professional_link',
         'description',
         'xe_date',
-
         'notes',
         'last_action_by',
+        'last_action_by_date',
+        'edited',
     ];
 
     protected $primaryKey = '_id';

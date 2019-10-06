@@ -9,7 +9,7 @@
                 <a><i class="fa fa-edit"></i> Xe Ads <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: {!! str_contains(\Request::url(), 'xe-ads') ? 'block':'none' !!};">
                     <li class="{!! str_contains(\Request::url(), 'xe-ads') ? 'active':'' !!}"><a href="/xe-ads">All</a></li>
-                    <li class="{!! str_contains(\Request::url(), 'xe-ads/visited') ? 'active':'' !!}"><a href="/xe-ads/visited">Visited</a></li>
+                    <li class="{!! str_contains(\Request::url(), 'edited') ? 'active':'' !!}"><a href="/xe-ads/edited">Edited</a></li>
                 </ul>
             </li>
         </ul>

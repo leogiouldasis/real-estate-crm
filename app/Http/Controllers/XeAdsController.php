@@ -36,11 +36,11 @@ class XeAdsController extends Controller
         ]);
     }
 
-    public function visited(Request $request, $category = null, $sub_category = null)
+    public function edited(Request $request, $category = null, $sub_category = null)
     {
         $this->buildFilters();
-        return view('xe-ads.visited', [
-            'title' => 'Xe Ads Visited List',
+        return view('xe-ads.edited', [
+            'title' => 'Xe Ads Edited List',
             'request' => $request->all(),
         ]);
     }
@@ -105,6 +105,8 @@ class XeAdsController extends Controller
     {
         $data = $request->all();
         $data['last_action_by'] = \Auth::user()->id;
+        $data['last_action_by_date'] = Carbon::now();
+        $data['edited'] = true;
         $xeAd = XeAds::where('id', (int) $id)->first();
         $xeAd->update($data);
         return redirect()->route('xe-ads.edit', ['id' => $xeAd->id])->with('status', 'Saved!');
