@@ -54,20 +54,42 @@ class XeAds extends Eloquent
         'professional_link',
         'description',
         'xe_date',
-        'notes',
+        
+        // Editing info
         'last_action_by',
         'last_action_by_date',
         'edited',
+        'address',
+        'street_number',
+        'owner_name',
+        'owner_surname',
+        'neighboorhood_info',
+        'area_info',
+        'urban_planning_info',
+        'comments',
     ];
 
     protected $primaryKey = '_id';
 
 
     // Relations
-    public function last_action_user()
-    {
+    public function last_action_user() {
         return $this->hasOne('App\User', '_id', 'last_action_by');
     }
 
+
+    public function addComment($comment) {
+        $comments = $this->comments ? $this->comments : [];
+
+        $add = [
+            'user_id' =>  \Auth::user()->id,
+            'user_name' =>  \Auth::user()->name,
+            'date' => date('d-m-Y'),
+            'text' => $comment
+        ];
+
+        array_unshift($comments, $add);
+        $this->comments = $comments;
+    }
 
 }

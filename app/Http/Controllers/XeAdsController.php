@@ -108,6 +108,7 @@ class XeAdsController extends Controller
         $data['last_action_by_date'] = Carbon::now();
         $data['edited'] = true;
         $xeAd = XeAds::where('id', (int) $id)->first();
+        $xeAd->addComment($data['comment']);
         $xeAd->update($data);
         return redirect()->route('xe-ads.edit', ['id' => $xeAd->id])->with('status', 'Saved!');
     }
