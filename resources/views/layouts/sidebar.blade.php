@@ -17,7 +17,7 @@
     <div class="menu_section">
         <h3>Statistics</h3>
         <ul class="nav side-menu">
-            <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> New ads 
+            <li><a href="/statistics/new-ads"><i class="fa fa-laptop"></i> New ads 
                 <span class="label label-success pull-right">Coming Soon</span></a></li>
         </ul>
     </div>

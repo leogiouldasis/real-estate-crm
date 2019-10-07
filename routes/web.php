@@ -21,6 +21,16 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/xe-ads/edited', 'XeAdsController@edited')->name('home');
     Route::resource('xe-ads', 'XeAdsController');
+    
+});
+
+Route::group([
+    'middleware' => ['auth'],
+    'namespace' => 'Statistics',
+    'prefix' => 'statistics/',
+    'as' => 'statistics.',
+], function () {
+    Route::get('/new-ads', 'NewAdsController@index')->name('new_ads');
 });
 
 
