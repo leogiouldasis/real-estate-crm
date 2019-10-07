@@ -29,7 +29,7 @@ class XeAds extends Eloquent
     public $timestamps = true;
 
     protected $dates = [
-        'xe_date',
+        'xe_date', 'last_action_by_date',
     ];
     protected $dateFormat = 'd-m-Y H:i';
 

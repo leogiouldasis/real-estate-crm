@@ -91,7 +91,7 @@
                                                 <th>TM</th>
                                                 <th>Profe.</th>
                                                 <th>XE Date</th>
-                                                <th>Last updated</th>
+                                                <th>Last Edited</th>
                                                 <th>XE Link</th>
                                             </tr>
                                         </thead>
@@ -179,7 +179,7 @@
             {data: 'tm', name: 'ads.tm', orderable: true},
             {data: 'is_professional', name: 'ads.is_professional',  sortable: true},
             {data: 'xe_date', name: 'ads.xe_date',  sortable: true},
-            {data: 'updated_at', name: 'ads.updated_at',  sortable: true},
+            {data: 'last_action_by_date', name: 'ads.last_action_by_date',  sortable: true},
             {
                 sortable: false,
                 searchable: false,

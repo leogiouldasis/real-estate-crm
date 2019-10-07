@@ -236,17 +236,19 @@
                 <div class="x_content" style="display: block;">
                     <div class="">
                         <ul class="to_do">
-                            @foreach($xeAd->comments as $comment)
-                            <li>
-                                <p>
-                                    <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox"
-                                            class="flat" style="position: absolute; opacity: 0;"><ins
-                                            class="iCheck-helper"
-                                            style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-                                    </div>{{ $comment['date'] }} / {{ $comment['user_name'] }}  --->  {{ $comment['text'] }}
-                                </p>
-                            </li>
-                            @endforeach
+                            @if($xeAd->comments)
+                                @foreach($xeAd->comments as $comment)
+                                <li>
+                                    <p>
+                                        <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox"
+                                                class="flat" style="position: absolute; opacity: 0;"><ins
+                                                class="iCheck-helper"
+                                                style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                        </div>{{ $comment['date'] }} / {{ $comment['user_name'] }}  --->  {{ $comment['text'] }}
+                                    </p>
+                                </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>
