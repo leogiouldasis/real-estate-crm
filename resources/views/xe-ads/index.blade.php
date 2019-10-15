@@ -105,12 +105,14 @@
                                                 <th>Area</th>
                                                 <th>Nomos</th>
                                                 <th>Type</th>
+                                                <th>Phone</th>
                                                 <th>Price</th>
                                                 <th>TM</th>
                                                 <th>Is Edited</th>
                                                 <th>Profe.</th>
-                                                <th>XE Date</th>
-                                                <th>Last updated</th>
+                                                <th>XE Updated</th>
+                                                <th>XE Created</th>
+                                                <th>Last Crawled</th>
                                                 <th>XE Link</th>
                                             </tr>
                                         </thead>
@@ -198,6 +200,7 @@
             {data: 'area', name: 'ads.area', sortable: true},
             {data: 'nomos', name: 'ads.nomos', sortable: true},
             {data: 'type', name: 'ads.type', sortable: true},
+            {data: 'phone', name: 'ads.phone', sortable: true},
             {data: 'price', name: 'ads.price', orderable: true},
             {data: 'tm', name: 'ads.tm', orderable: true},
             {
@@ -210,7 +213,8 @@
             },
             {data: 'is_professional', name: 'ads.is_professional',  sortable: true},
             {data: 'xe_date', name: 'ads.xe_date',  sortable: true},
-            {data: 'updated_at', name: 'ads.updated_at',  sortable: true},
+            {data: 'xe_created_at', name: 'ads.xe_created_at',  sortable: true},
+            {data: 'crawled_at', name: 'ads.crawled_at',  sortable: true},
             {
                 sortable: false,
                 searchable: false,

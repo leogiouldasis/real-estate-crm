@@ -29,7 +29,7 @@ class XeAds extends Eloquent
     public $timestamps = true;
 
     protected $dates = [
-        'xe_date', 'last_action_by_date',
+        'xe_date', 'last_action_by_date', 'crawled_at', 'xe_created_at',
     ];
     protected $dateFormat = 'd-m-Y H:i';
 
@@ -54,6 +54,8 @@ class XeAds extends Eloquent
         'professional_link',
         'description',
         'xe_date',
+        'crawled_at',
+        'xe_created_at',
         
         // Editing info
         'last_action_by',

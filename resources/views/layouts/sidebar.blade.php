@@ -12,6 +12,12 @@
                     <li class="{!! str_contains(\Request::url(), 'edited') ? 'active':'' !!}"><a href="/xe-ads/edited">Edited</a></li>
                 </ul>
             </li>
+            <li class="{!! str_contains(\Request::url(), 'clients') ? 'active':'' !!}">
+                <a><i class="fa fa-user"></i> Clients <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: {!! str_contains(\Request::url(), 'clients') ? 'block':'none' !!};">
+                    <li class="{!! str_contains(\Request::url(), 'clients') ? 'active':'' !!}"><a href="/clients">All</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
     <div class="menu_section">

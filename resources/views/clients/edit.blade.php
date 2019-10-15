@@ -6,7 +6,7 @@
         <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Xe<small>Information</small></h2>
+                    <h2>Client<small>Information</small></h2>
                     <div class="clearfix"></div>
                     <h5>Last Updated on XE {{$xeAd->xe_date}}</h5>
                 </div>
@@ -77,13 +77,6 @@
                             </div>
                         </div>
                         <div class="item form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Phone </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->phone }}>
-                            </div>
-                        </div>
-                        <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Price </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
@@ -127,21 +120,12 @@
                             </div>
                         </div>
                         <div class="item form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">XE Created Date
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text"
-                                    value={{ $xeAd->xe_created_at }}>
-                            </div>
-                        </div>
-                        <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Last time Crawled
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
                                     data-validate-words="2" name="name" disabled type="text"
-                                    value={{ $xeAd->crawled_at }}>
+                                    value={{ $xeAd->updated_at }}>
                             </div>
                         </div>
                     </form>

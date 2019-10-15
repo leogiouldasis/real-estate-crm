@@ -5,24 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use View;
-use App\Models\XeAds;
+use App\Models\Client;
 use Cache;
 
-class XeAdsController extends Controller
+class ClientsController extends Controller
 {
 
     public function index(Request $request, $category = null, $sub_category = null)
     {
-        return view('xe-ads.index', [
-            'title' => 'Xe Ads List',
-            'request' => $request->all(),
-        ]);
-    }
-
-    public function edited(Request $request, $category = null, $sub_category = null)
-    {
-        return view('xe-ads.edited', [
-            'title' => 'Xe Ads Edited List',
+        return view('clients.index', [
+            'title' => 'Clients List',
             'request' => $request->all(),
         ]);
     }
@@ -34,7 +26,9 @@ class XeAdsController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create', [
+            'title' => 'Client Create'
+        ]);
     }
 
     /**
@@ -67,12 +61,10 @@ class XeAdsController extends Controller
      */
     public function edit($id)
     {
-        $xeAd = XeAds::where('id', (int) $id)->first();
-        // dd($xeAd);
-
-        return view('xe-ads.edit', [
-            'title' => 'Xe Ad '.$xeAd->id,
-            'xeAd' => $xeAd
+        $client = Client::where('id', (int) $id)->first();
+        return view('clients.edit', [
+            'title' => 'Client '.$client->id,
+            'xeAd' => $client
         ]);
     }
 
@@ -85,13 +77,13 @@ class XeAdsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $data['last_action_by'] = \Auth::user()->id;
-        $data['last_action_by_date'] = Carbon::now();
-        $data['edited'] = true;
-        $xeAd = XeAds::where('id', (int) $id)->first();
-        $xeAd->addComment($data['comment']);
-        $xeAd->update($data);
+        // $data = $request->all();
+        // $data['last_action_by'] = \Auth::user()->id;
+        // $data['last_action_by_date'] = Carbon::now();
+        // $data['edited'] = true;
+        // $xeAd = XeAds::where('id', (int) $id)->first();
+        // $xeAd->addComment($data['comment']);
+        // $xeAd->update($data);
         return redirect()->route('xe-ads.edit', ['id' => $xeAd->id])->with('status', 'Saved!');
     }
 

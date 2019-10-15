@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Jenssegers\Mongodb\Eloquent\Builder;
+use App\Models\XeAds;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +29,16 @@ class AppServiceProvider extends ServiceProvider
         if (in_array(env('APP_ENV'), ['staging', 'production'])) {
             \URL::forceScheme('https');
         }
+
+        $filters = [
+            'areas' => [],
+            'nomoi' => [],
+            'states' => [],
+        ];
+        $filters['areas'] = XeAds::raw()->distinct('area');
+        $filters['nomoi'] = XeAds::raw()->distinct('nomos');
+        $filters['states'] = XeAds::raw()->distinct('state');
+
+        View::share('filters', $filters);
     }
 }
