@@ -34,10 +34,12 @@ class AppServiceProvider extends ServiceProvider
             'areas' => [],
             'nomoi' => [],
             'states' => [],
+            'types' => [],
         ];
         $filters['areas'] = XeAds::raw()->distinct('area');
         $filters['nomoi'] = XeAds::raw()->distinct('nomos');
         $filters['states'] = XeAds::raw()->distinct('state');
+        $filters['types'] = XeAds::raw()->distinct('type');
 
         View::share('filters', $filters);
     }

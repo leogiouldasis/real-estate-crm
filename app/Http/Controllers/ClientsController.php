@@ -39,7 +39,9 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $client = Client::create($data);
+        return redirect()->route('clients.edit', $client->id)->with('status', 'Created!');
     }
 
     /**
@@ -61,10 +63,10 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-        $client = Client::where('id', (int) $id)->first();
+        $client = Client::find($id);
         return view('clients.edit', [
             'title' => 'Client '.$client->id,
-            'xeAd' => $client
+            'client' => $client
         ]);
     }
 

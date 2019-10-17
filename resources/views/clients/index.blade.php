@@ -10,7 +10,7 @@
                     <h4>{{ $title }}</h4>
                 </div>
                 <div class="card-body card-padding">
-                    {!! Form::open(['url' => '/xe-ads', 'method' => 'get', 'class' => '', 'id' => '']) !!}
+                    {!! Form::open(['url' => '/clients', 'method' => 'get', 'class' => '', 'id' => '']) !!}
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x-panel">
@@ -26,22 +26,22 @@
                                 </div>
                                 <div class="x_content">
                                     <div class="row form-group">
-                                        <div class="col-sm-4 ">
+                                        {{-- <div class="col-sm-4 ">
                                             <label for="id" class="col-sm-4 control-label">ID</label>
                                             <div class="col-sm-8">
-                                                <input type="number" id="id" name="id" class="form-control"> 
+                                                <input type="number" id="id" name="id" class="form-control" value="{{ $request['id'] ?? ''}}"> 
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-sm-4 ">
                                             <label for="name" class="col-sm-4 control-label">Name</label>
                                             <div class="col-sm-8">
-                                                <input type="text" id="name" name="name" class="form-control"> 
+                                                <input type="text" id="name" name="name" class="form-control" value="{{ $request['name'] ?? ''}}"> 
                                             </div>
                                         </div>
                                         <div class="col-sm-4 ">
                                             <label for="surname" class="col-sm-4 control-label">Surname</label>
                                             <div class="col-sm-8">
-                                                <input type="text" id="surname" name="surname" class="form-control"> 
+                                                <input type="text" id="surname" name="surname" class="form-control" value="{{ $request['surname'] ?? ''}}"> 
                                             </div>
                                         </div>
                                     </div>
@@ -49,13 +49,13 @@
                                         <div class="col-sm-4 ">
                                             <label for="email" class="col-sm-4 control-label">Email</label>
                                             <div class="col-sm-8">
-                                                <input type="text" id="email" name="email" class="form-control"> 
+                                            <input type="text" id="email" name="email" class="form-control" value="{{ $request['email'] ?? ''}}"> 
                                             </div>
                                         </div>
                                         <div class="col-sm-4 ">
                                             <label for="phone" class="col-sm-4 control-label">Phone</label>
                                             <div class="col-sm-8">
-                                                <input type="number" id="phone" name="phone" class="form-control"> 
+                                                <input type="number" id="phone" name="phone" class="form-control" value="{{ $request['phone'] ?? ''}}"> 
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -66,7 +66,7 @@
                                                     <option value="" disabled="">ALL</option>
                                                     @foreach(config('options.interest_type') as $obj)
                                                     <option value="{{$obj}}"
-                                                        {{ isset($request['interest_type']) && $request['interest_type'] === $pbj ? 'selected' : '' }}>
+                                                        {{ isset($request['interest_type']) && $request['interest_type'] === $obj ? 'selected' : '' }}>
                                                         {{$obj}}
                                                     </option>
                                                     @endforeach
@@ -89,10 +89,10 @@
                                     <table class="table table-condensed table-striped" id='index'>
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
                                                 <th>Name</th>
                                                 <th>Surname</th>
                                                 <th>Email</th>
+                                                <th>Phone</th>
                                                 <th>Interest Type</th>
                                             </tr>
                                         </thead>
@@ -138,7 +138,7 @@
         ajax: {
             "url": '/async/clients/getdata',
             "data": function ( d ) {
-                d.id = "{{ $request['id'] ?? '' }}";
+                // d.id = "{{ $request['id'] ?? '' }}";
                 d.name = "{{ $request['name'] ?? '' }}";
                 d.surname = "{{ $request['surname'] ?? '' }}";
                 d.email = "{{ $request['email'] ?? '' }}";
@@ -150,7 +150,6 @@
         searchHighlight: true,
         responsive: true,
         columns: [
-            {data: 'id', name: 'client.id',  sortable: true},
             {data: 'name', name: 'client.area', sortable: true},
             {data: 'surname', name: 'client.nomos', sortable: true},
             {data: 'email', name: 'client.email', sortable: true},

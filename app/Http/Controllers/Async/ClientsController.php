@@ -21,25 +21,29 @@ class ClientsController extends Controller
 
     public function getColumnData(Request $request)
     {
-        $ads = Client::orderBy('xe_date', 'desc');
+        $clients = Client::orderBy('xe_date', 'desc');
 
-        if ($request->filled('areas')) {
-            $ads->whereIn('area', $request->areas);
+        if ($request->filled('name')) {
+            $clients->where('name', $request->name);
         }
 
-        if ($request->filled('nomoi')) {
-            $ads->whereIn('nomos', $request->nomoi);
+        if ($request->filled('surname')) {
+            $clients->where('surname', $request->surname);
         }
 
-        if ($request->filled('states')) {
-            $ads->whereIn('state', $request->states);
+        if ($request->filled('email')) {
+            $clients->where('email', $request->email);
         }
 
-        if ($request->filled('is_professional')) {
-            $ads->where('is_professional', $request->is_professional);
+        if ($request->filled('phone')) {
+            $clients->where('phone', $request->phone);
         }
 
-        return Datatables::of($ads)
+        if ($request->filled('interest_type')) {
+            $clients->where('interest_type', $request->interest_type);
+        }
+
+        return Datatables::of($clients)
             // ->addColumn('last_action_date', function ($lead) {
             //     return $lead->last_action_date;
             // })

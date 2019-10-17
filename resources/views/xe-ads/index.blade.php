@@ -85,6 +85,59 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="col-sm-4">
+                                            <label for="areas" class="col-sm-4 control-label">Xe ID</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control" name="id" id="id" value="{{ $request['id'] ?? '' }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="areas" class="col-sm-4 control-label">Phone</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control" name="phone" id="phone" value="{{ $request['phone'] ?? '' }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-sm-4 ">
+                                            <label for="type" class="col-sm-4 control-label">Type</label>
+                                            <div class="col-sm-8">
+                                                <select class="" name="type[]" data-placeholder="Choose type..." id="type"
+                                                    multiple="multiple" style="width: 100%;">
+                                                    <option value="" disabled="">ALL</option>
+                                                    @foreach($filters['types'] as $obj)
+                                                    <option value="{{$obj}}"
+                                                        {{ isset($request['type']) && in_array($obj, $request['type']) ? 'selected':'' }}>
+                                                        {{$obj}}
+                                                    </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="price_from" class="col-sm-4 control-label">Price from</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control" name="price_from" id="price_from" value="{{ $request['price_from'] ?? '' }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="price_to" class="col-sm-4 control-label">Price to</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control" name="price_to" id="price_to" value="{{ $request['price_to'] ?? '' }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="tm_from" class="col-sm-4 control-label">TM from</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control" name="tm_from" id="tm_from" value="{{ $request['tm_from'] ?? '' }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="tm_to" class="col-sm-4 control-label">TM to</label>
+                                            <div class="col-sm-8">
+                                                <input type="number" class="form-control" name="tm_to" id="tm_to" value="{{ $request['tm_to'] ?? '' }}">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -138,6 +191,8 @@
         });
         $("#state").select2({
         });
+        $("#type").select2({
+        });
         $("#is_professional").select2({
             width: '100%'
         });
@@ -159,6 +214,13 @@
         @if(isset($request['state']) && !empty($request['state']))
           @foreach($request['state'] as $state)
             states.push('{{$state}}');
+          @endforeach
+        @endif
+
+        var types = [];
+        @if(isset($request['type']) && !empty($request['type']))
+          @foreach($request['type'] as $type)
+            types.push('{{$type}}');
           @endforeach
         @endif
         
@@ -190,6 +252,13 @@
                 d.nomoi = nomoi;
                 d.states = states;
                 d.is_professional = "{{ $request['is_professional'] ?? '' }}";
+                d.id = "{{ $request['id'] ?? '' }}";
+                d.phone = "{{ $request['phone'] ?? '' }}";
+                d.type = types;
+                d.price_from = "{{ $request['price_from'] ?? '' }}";
+                d.price_to = "{{ $request['price_to'] ?? '' }}";
+                d.tm_from = "{{ $request['tm_from'] ?? '' }}";
+                d.tm_to = "{{ $request['tm_to'] ?? '' }}";
             }
         },
         order: [[ 0, 'desc' ]],

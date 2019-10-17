@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/xe-ads/{id}/json', 'XeAdsController@json')->name('xe-ads.json');
     Route::get('/xe-ads/edited', 'XeAdsController@edited')->name('home');
     Route::resource('xe-ads', 'XeAdsController');
 

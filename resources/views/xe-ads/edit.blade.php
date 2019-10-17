@@ -21,101 +21,101 @@
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">ID </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->id }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text" value="{{ $xeAd->id }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Area Full </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text"
-                                    value={{ $xeAd->area_full }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text"
+                                    value="{{ $xeAd->area_full }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">State </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->state }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text" value="{{ $xeAd->state }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nomos </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->nomos }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text" value="{{ $xeAd->nomos }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Tomeas </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->tomeas }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text" value="{{ $xeAd->tomeas }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Municipality </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text"
-                                    value={{ $xeAd->municipality }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text"
+                                    value="{{ $xeAd->municipality }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Area </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->area }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text" value="{{ $xeAd->area }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Type </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->type }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text" value="{{ $xeAd->type }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Phone </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->phone }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text" value="{{ $xeAd->phone }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Price </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text"
-                                    value={{ number_format($xeAd->price, 0, ',', '.') }}€>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text"
+                                    value="{{ number_format($xeAd->price, 0, ',', '.') }}€">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">TM - €/TM </label>
                             <div class="col-md-3 col-sm-3 col-xs-6">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text" value={{ $xeAd->tm }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text" value="{{ $xeAd->tm }}">
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-6">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text"
-                                    value={{ $xeAd->cost_tm }}€>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text"
+                                    value="{{ $xeAd->cost_tm }}€">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Is Professional </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text"
-                                    value={{ $xeAd->is_professional }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text"
+                                    value="{{ $xeAd->is_professional }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Link</label>
                             <div class="col-md-6 col-sm-6 col-xs-12" style="margin-top:7px;">
-                                <a href="{{ $xeAd->professional_link }}">
-                                    <code>{{ $xeAd->professional_link }}</code>
+                                <a href="{{ $xeAd->professional_link }}" target="_blank">
+                                    <code>"{{ $xeAd->professional_link }}"</code>
                                 </a>
                             </div>
                         </div>
@@ -123,25 +123,25 @@
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Description</label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <textarea id="textarea" disabled rows="10" cols="50"
-                                    class="form-control col-md-7 col-xs-12">{{ $xeAd->description }}</textarea>
+                                    class="form-control col-md-7 col-xs-12">{{ $xeAd->description_content }}</textarea>
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">XE Created Date
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text"
-                                    value={{ $xeAd->xe_created_at }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text"
+                                    value="{{ $xeAd->xe_created_at }}">
                             </div>
                         </div>
                         <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Last time Crawled
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                    data-validate-words="2" name="name" disabled type="text"
-                                    value={{ $xeAd->crawled_at }}>
+                                <input id="name" class="form-control col-md-7 col-xs-12" 
+                                     name="name" disabled type="text"
+                                    value="{{ $xeAd->crawled_at }}">
                             </div>
                         </div>
                     </form>
@@ -161,27 +161,27 @@
                     <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Address</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                            <input id="address" class="form-control col-md-7 col-xs-12" data-validate-length-range="6"
-                                data-validate-words="2" name="address" type="text" value={{ $xeAd->address }}>
+                            <input id="address" class="form-control col-md-7 col-xs-12" 
+                                 name="address" type="text" value="{{ $xeAd->address }}">
                         </div>
                         <label class="control-label col-md-1 col-sm-1 col-xs-12" for="name">Num</label>
                         <div class="col-md-2 col-sm-2 col-xs-6">
                             <input id="street_number" class="form-control col-md-7 col-xs-12"
-                                data-validate-length-range="6" data-validate-words="2" name="street_number"
-                                type="number" value={{ $xeAd->street_number }}>
+                                  name="street_number"
+                                type="number" value="{{ $xeAd->street_number }}">
                         </div>
                     </div>
                     <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Owner Info</label>
                         <div class="col-md-4 col-sm-4 col-xs-6">
                             <input id="owner_name" class="form-control col-md-7 col-xs-12"
-                                data-validate-length-range="6" data-validate-words="2" name="owner_name" type="text"
-                                value={{ $xeAd->owner_name }}>
+                                  name="owner_name" type="text"
+                                value="{{ $xeAd->owner_name }}">
                         </div>
                         <div class="col-md-5 col-sm-5 col-xs-6">
                             <input id="owner_surname" class="form-control col-md-7 col-xs-12"
-                                data-validate-length-range="6" data-validate-words="2" name="owner_surname" type="text"
-                                value={{ $xeAd->owner_surname }}>
+                                  name="owner_surname" type="text"
+                                value="{{ $xeAd->owner_surname }}">
                         </div>
                     </div>
                     <div class="item form-group">

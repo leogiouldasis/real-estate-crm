@@ -105,4 +105,11 @@ class XeAdsController extends Controller
     {
         //
     }
+
+
+    public function json($id)
+    {
+        $xeAd = XeAds::where('id', (int) $id)->first();
+        return $xeAd;
+    }
 }
