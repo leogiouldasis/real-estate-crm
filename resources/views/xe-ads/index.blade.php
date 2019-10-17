@@ -161,7 +161,7 @@
                                                 <th>Phone</th>
                                                 <th>Price</th>
                                                 <th>TM</th>
-                                                <th>Is Edited</th>
+                                                <th>Edit</th>
                                                 <th>Profe.</th>
                                                 <th>XE Updated</th>
                                                 <th>XE Created</th>
@@ -265,13 +265,13 @@
         searchHighlight: true,
         responsive: true,
         columns: [
-            {data: 'id', name: 'ads.id',  sortable: true},
-            {data: 'area', name: 'ads.area', sortable: true},
-            {data: 'nomos', name: 'ads.nomos', sortable: true},
-            {data: 'type', name: 'ads.type', sortable: true},
-            {data: 'phone', name: 'ads.phone', sortable: true},
-            {data: 'price', name: 'ads.price', orderable: true},
-            {data: 'tm', name: 'ads.tm', orderable: true},
+            {data: 'id', name: 'ads.id',  sortable: false},
+            {data: 'area', name: 'ads.area', sortable: false},
+            {data: 'nomos', name: 'ads.nomos', sortable: false},
+            {data: 'type', name: 'ads.type', sortable: false},
+            {data: 'phone', name: 'ads.phone', sortable: false},
+            {data: 'price', name: 'ads.price', orderable: false},
+            {data: 'tm', name: 'ads.tm', orderable: false},
             {
                 sortable: false,
                 searchable: false,
@@ -280,10 +280,10 @@
                     return $item;
                 }
             },
-            {data: 'is_professional', name: 'ads.is_professional',  sortable: true},
-            {data: 'xe_date', name: 'ads.xe_date',  sortable: true},
-            {data: 'xe_created_at', name: 'ads.xe_created_at',  sortable: true},
-            {data: 'crawled_at', name: 'ads.crawled_at',  sortable: true},
+            {data: 'is_professional', name: 'ads.is_professional',  sortable: false},
+            {data: 'xe_date', name: 'ads.xe_date',  sortable: false},
+            {data: 'xe_created_at', name: 'ads.xe_created_at',  sortable: false},
+            {data: 'crawled_at', name: 'ads.crawled_at',  sortable: false},
             {
                 sortable: false,
                 searchable: false,
